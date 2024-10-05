@@ -6,10 +6,8 @@ async fn handler() -> Html<&'static str> {
 
 #[tokio::main]
 async fn main() {
-  // build our application with a route
   let app = Router::new().route("/", get(handler));
 
-  // run it
   let listener = tokio::net::TcpListener::bind("127.0.0.1:3000")
     .await
     .unwrap();
