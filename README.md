@@ -12,9 +12,32 @@ backend in a development.
 - Install Rust (https://rustup.rs/)
 
 - Set up `.env` file:
-  - For `.env` and set up `DATABASE_URL` to point to your local
-    Postgres database.
+  1. Copy `.env.example` to `.env`
+  2. Set `DATABASE_URL` to point to your local Postgres database.
+
+- Install `sqlx` by running `cargo install sqlx-cli`
 
 **macOS**
 
 - Postgres installed and running: `brew install postgresql`
+- Postgres database created with `createdb shopped`
+- Postgres user created and granted access to the database
+- Run `cargo sqlx migrate run`
+  - If you get the error `role "postgres" does not exist`, run `createuser -s postgres`.
+
+### Running
+
+1. `cargo run` in your terminal
+
+### Migrating the database
+
+When the database schema has been changed, you can migrate the local database by
+running this command:
+
+```sh
+sqlx migrate run
+```
+
+## LICENSE
+
+[MIT LICENSE](./LICENSE)
