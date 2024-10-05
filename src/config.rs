@@ -17,3 +17,12 @@ pub struct Config {
   /// The size of the database connection pool.
   pub database_pool_size: u32,
 }
+
+impl std::fmt::Debug for Config {
+  fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    f.debug_struct("Config")
+      .field("port", &self.port)
+      .field("database_url", &"***")
+      .finish()
+  }
+}
