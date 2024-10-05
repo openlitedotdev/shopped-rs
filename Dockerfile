@@ -10,6 +10,8 @@ RUN cargo build --release
 RUN rm src/*.rs
 
 COPY ./src ./src
+COPY ./migrations ./migrations
+COPY ./.sqlx ./.sqlx
 
 RUN rm ./target/release/deps/shopped_rs*
 RUN cargo build --release
