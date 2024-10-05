@@ -25,10 +25,6 @@ backend in a development.
 - Run `cargo sqlx migrate run`
   - If you get the error `role "postgres" does not exist`, run `createuser -s postgres`.
 
-### Running
-
-1. `cargo run` in your terminal
-
 ### Migrating the database
 
 When the database schema has been changed, you can migrate the local database by
@@ -37,6 +33,10 @@ running this command:
 ```sh
 sqlx migrate run
 ```
+
+### Running
+
+- `cargo run` in your terminal
 
 ## LICENSE
 
