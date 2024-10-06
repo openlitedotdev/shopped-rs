@@ -2,7 +2,7 @@ use clap::Parser;
 
 #[derive(Parser)]
 pub struct Config {
-  #[clap(long = "port", env = "PORT", default_value = "8001")]
+  #[clap(long = "port", env = "PORT", default_value = "8000")]
   pub port: u16,
 
   #[clap(

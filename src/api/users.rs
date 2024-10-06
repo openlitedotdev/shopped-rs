@@ -1,4 +1,3 @@
-use axum::response::IntoResponse;
 use axum::routing::post;
 use axum::Router;
 
@@ -11,10 +10,10 @@ pub fn users() -> Router {
   )
 }
 
-async fn register() -> impl IntoResponse {
+async fn register() -> &'static str {
   "Register user"
 }
 
-async fn login() -> impl IntoResponse {
+async fn login() -> &'static str {
   "Login in"
 }

@@ -1,12 +1,12 @@
 mod users;
 
-use axum::{response::IntoResponse, routing::get, Router};
+use axum::{routing::get, Router};
 
-async fn healt() -> impl IntoResponse {
+async fn healt() -> &'static str {
   "Healt server"
 }
 
-async fn welcome() -> impl IntoResponse {
+async fn welcome() -> &'static str {
   "Welcome server API shopped Open source"
 }
 
