@@ -8,7 +8,7 @@ pub struct Config {
   #[clap(
     long = "database_url",
     env = "DATABASE_URL",
-    default_value = "postgres://user:password@localhost/registry"
+    default_value = "postgres://postgres@localhost/shopped"
   )]
   /// The URL to use to connect to the database.
   pub database_url: String,
