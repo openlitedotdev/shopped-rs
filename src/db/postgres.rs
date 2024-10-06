@@ -29,6 +29,7 @@ impl Database {
         .expect("ERROR: ❌ Database schema error");
     }
 
+    tracing::info!("Connection to PostgreSQL successfully established.");
     println!("SUCCESS: ✅ Database connected");
     Ok(Database { pool })
   }
