@@ -35,7 +35,7 @@ impl Database {
   }
 
   #[instrument(name = "Database::create_user", skip(self, new_user), err, fields(new_user.name = new_user.name, user.email = new_user.email))]
-  pub async fn insert_user(&self, new_user: CreateUser<'_>) -> Result<User> {
+  pub async fn insert_user(&self, new_user: CreateUser) -> Result<User> {
     sqlx::query_as!(
       User,
       r#"INSERT INTO users (name, email)

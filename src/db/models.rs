@@ -1,8 +1,9 @@
 use chrono::DateTime;
 use chrono::Utc;
+use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-#[derive(Debug, Clone)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct User {
   pub id: Uuid,
   pub name: String,
@@ -11,8 +12,9 @@ pub struct User {
   pub created_at: DateTime<Utc>,
   pub avatar_url: Option<String>,
 }
+#[derive(Clone, Debug, Serialize, Deserialize)]
 
-pub struct CreateUser<'s> {
-  pub name: &'s str,
-  pub email: &'s str,
+pub struct CreateUser {
+  pub name: String,
+  pub email: String,
 }
