@@ -31,3 +31,5 @@ clap = { version = "4", default-features = false, features = [
     "error-context",
     "suggestions",
 ] }
+serde_json = "1.0.128"
+serde = { version = "1.0.210", features = ["derive"] }
