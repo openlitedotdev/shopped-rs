@@ -12,8 +12,8 @@ pub struct User {
   pub created_at: DateTime<Utc>,
   pub avatar_url: Option<String>,
 }
-#[derive(Clone, Debug, Serialize, Deserialize)]
 
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct CreateUser {
   pub name: String,
   pub email: String,
