@@ -24,7 +24,7 @@ CREATE TABLE users (
     id uuid NOT NULL PRIMARY KEY DEFAULT uuid_generate_v4(),
     name text NOT NULL,
     email text NOT NULL,
-    avatar_url text NOT NULL,
+    avatar_url text,
     updated_at timestamptz NOT NULL DEFAULT now(),
     created_at timestamptz NOT NULL DEFAULT now()
 );
