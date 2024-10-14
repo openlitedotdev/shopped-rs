@@ -15,7 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Build
-        run: cargo build --release
+      - name: Check formatter
+        run: cargo fmt --check
+
       - name: Run tests
         run: cargo test

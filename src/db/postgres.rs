@@ -34,7 +34,7 @@ impl Database {
     Ok(Database { pool })
   }
 
-  #[instrument(name = "Database::create_user", skip(self, new_user), err, fields(new_user.name = new_user.name, user.email = new_user.email, new_user.avatar_url))]
+  #[instrument(name = "Database::create_user", skip(self, new_user), err, fields(new_user.name = new_user.name, new_user.email = new_user.email, new_user.avatar_url))]
   pub async fn insert_user(&self, new_user: CreateUser) -> Result<User> {
     sqlx::query_as!(
       User,
@@ -57,9 +57,14 @@ impl Database {
       .await
   }
 
-  #[instrument(name = "Database::get_user_by_email", skip(self), err)]
+  #[instrument(
+    name = "Database::get_user_by_email",
+    skip(self, email),
+    err,
+    fields(email = email)
+  )]
   pub async fn get_user_by_email(&self, email: String) -> Result<User> {
-    sqlx::query_as!(User, r#"SELECT * from users WHERE email LIKE $1"#, email,)
+    sqlx::query_as!(User, r#"SELECT * from users WHERE email LIKE $1"#, email)
       .fetch_one(&self.pool)
       .await
   }
