@@ -17,4 +17,5 @@ pub struct User {
 pub struct CreateUser {
   pub name: String,
   pub email: String,
+  pub avatar_url: Option<String>,
 }
