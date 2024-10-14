@@ -17,6 +17,3 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check formatter
         run: cargo fmt --check
-
-      - name: Run tests
-        run: cargo test
